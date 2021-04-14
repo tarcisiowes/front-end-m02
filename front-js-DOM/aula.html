@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            justify-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, eu me chamo <span class="nome"></span>, prazer em conhece-lo!</h1>
+    <p>Eu tenho <span class="idade"></span> anos, moro em <span class="cidade"></span> / <span class="uf"></span> e meu hobbie é <span class="hobbie"></span>.</p>
+    <img>
+    <button type="button" onclick="imgRandom()">Quero uma imagem aleatoria</button>
+    <br>
+
+
+    <button type="button" onclick="saudacao('dia')">Bom dia!</button>
+    <button type="button" onclick="saudacao('tarde')">Boa tarde!</button>
+    <button type="button" onclick="saudacao('noite')">Boa noite!</button>
+    <button type="button" onclick="saudacao()">Olar!</button>
+
+
+</body>
+
+<script>
+    // ===================================== Input/Outpu com Promt ======
+    // const nome = document.querySelector('.nome');
+    // const idade = document.querySelector('.idade');
+    // const cidade = document.querySelector('.cidade');
+    // const uf = document.querySelector('.uf');
+    // const hobbie = document.querySelector('.hobbie');
+
+    // nome.innerText = prompt("Qual seu nome?");
+    // idade.innerText = prompt("Quantos anos tem?");
+    // cidade.innerText = prompt("Qual é a cidade onde mora?");
+    // uf.innerText = prompt("Qual é o estado?");
+    // hobbie.innerText = prompt("Qual é seu hobbie preferido?");
+
+    // =========================================== Alterando URL =========
+
+    const img = document.querySelector('img');
+    const urlBase = "https://picsum.photos/id/";
+    const sizeBase = "/200/300";
+
+    function imgRandom() {
+        const idRandom = Math.ceil(Math.random() * 100) //random gera numeros de 0 ate 1
+        img.src = urlBase + idRandom + sizeBase;
+    }
+
+    //========================= Uma Funcacao pra varios casos ============
+
+    function saudacao(parteDoDia) {
+        switch (parteDoDia) {
+            case 'dia':
+                alert('Bom dia! vai um cafe?');
+                break;
+            case 'tarde':
+                alert('Boa tarde! O rango ta pronto');
+                break;
+            case 'dia':
+                alert('Boa noite! A janta ta no forno');
+                break;
+            default:
+                alert('Olar, tudo bem ?')
+                break
+        }
+    }
+
+</script>
+</html>
