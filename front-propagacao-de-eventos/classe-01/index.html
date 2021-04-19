@@ -56,6 +56,7 @@
   <script>
     const container = document.querySelector('.container');
     const card = document.querySelector('.card');
+    const botao = document.querySelector("button")
 
     function carregarMais({ target: botao }) {
       const textoAnterior = botao.innerText;
@@ -63,13 +64,20 @@
       setTimeout(requisicao, 2000, { botao, textoAnterior });
     }
 
+    
+
     function requisicao({ botao, textoAnterior }) {
       for (let i = 0; i < 6; i++) {
         container.appendChild(card.cloneNode(true));
       }
 
-      botao.innerText = textoAnterior;
+      botao.innerText = textoAnterior;      
+
     }
+
+    botao.addEventListener("click", carregarMais)
+    botao.addEventListener("click", requisicao, { once: true})
+
   </script>
 
 </html>
