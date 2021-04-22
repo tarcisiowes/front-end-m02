@@ -13,7 +13,7 @@
 <body>
     <div class="content-wrapper">
         <div class="text-wrapper">
-            <p class="review-text">“Estive interessada em código por um tempo mas não tomava uma atitude, até agora. Não consigo recomendar esse curso o suficiente. Estou no trabalho dos meu sonhos e vejo um futuro brilhante!”</p>
+            <p class="review__text">“Estive interessada em código por um tempo mas não tomava uma atitude, até agora. Não consigo recomendar esse curso o suficiente. Estou no trabalho dos meu sonhos e vejo um futuro brilhante!”</p>
             <div class="author__content-wrapper">
                 <div class="author__name">Gabriela da Silva</div>
                 <div class="author__title">Desenvolvedora Fullstack</div>
@@ -25,8 +25,8 @@
                 <img src="./assets/gabriela.jpg" alt="bootcamp graduate" class="carousel__img">
             </div>
             <div class="carousel__btn-wrapper">
-                <button id="btn-prev" class="btn btn--previous" onclick="pessoaAnterior()"><img src="./assets/icon-prev.svg" alt="previous button"></button>
-                <button id="btn-next" class="btn btn--next" onclick="proximaPessoa()"><img src="./assets/icon-next.svg" alt="next button"></button>
+                <button id="btn-prev" class="btn btn--previous" onclick="pessoaAnterior()" ><img src="./assets/icon-prev.svg" alt="previous button"></button>
+                <button id="btn-next" class="btn btn--next" onclick="proximaPessoa()" ><img src="./assets/icon-next.svg" alt="next button"></button>
             </div>
         </div>
     </div>
@@ -44,6 +44,40 @@
         descricao: '“Se você quiser ter a melhor base possível, recomendo fazer este curso. A profundidade em que os instrutores entram é incrível. Agora me sinto muito confiante em começar como um desenvolvedor profissional.”',
         foto: './assets/joao.jpg'
     }];
+
+    
+    const text = document.querySelector('.review__text');
+    const name = document.querySelector('.author__name');
+    const title = document.querySelector('.author__title');
+    const img = document.querySelector('.carousel__img');
+
+    let i = 0;
+    const u = pessoas.length-1;
+
+    function pessoaAnterior() {
+                
+        i > 0 ? i-- : i = pessoas.length-1;
+        dados();       
+        
+    }
+
+
+    function proximaPessoa() {
+        
+        i < u ? i++ : i = 0;
+        dados() ;           
+
+    }
+
+    function dados() {
+        text.innerText = pessoas[i].descricao;
+        name.innerText = pessoas[i].nome;
+        title.innerText = pessoas[i].profissao;
+        img.src = pessoas[i].foto;
+    }
+    
+
+
 </script>
 
 </html>
