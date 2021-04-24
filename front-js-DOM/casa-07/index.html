@@ -91,6 +91,31 @@
         descricao: '🐱🐶',
         imagem: `${caminhoImagens}/lurdes.jpg`
     }];
+
+    const list = document.querySelectorAll('li')    
+    
+    function decrescente() {
+
+        contatos.sort((a, b) => {
+            return b.mensagens - a.mensagens
+        })
+
+    }
+    decrescente()
+
+    const maiores = contatos.slice(0, 5)
+
+    function imprimindoList() {
+
+        for (let i = 0; i < maiores.length; i++) {
+            list[i].querySelector('img').src = maiores[i].imagem
+            list[i].querySelector('.nome').innerText = maiores[i].nome
+            list[i].querySelector('.descricao').innerText = maiores[i].descricao
+        }
+
+    }
+    imprimindoList()
+
 </script>
 
 </html>
