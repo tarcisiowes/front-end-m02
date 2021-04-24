@@ -1,22 +1,25 @@
 ![](https://i.imgur.com/xG74tOh.png)
 
-# Frontend - Introdução ao React
+## Exercício de classe 🏫
 
-## Exercícios de classe 🏫
+### Escolha seu Team => Frontend ou Backend.
 
-1. Classe 01
-2. Classe 02
-3. Classe 03
-4. Classe 04
+Nesse app criado com o CRA (`create-react-app`) temos um bug, pois a estrutura de decisão `if` está escrita de forma incorreta. O seu objetivo é normalizar para que fiquem no formato aceito para JSX de forma que a aplicação funcione normalmente quando você executar o comando `npm start`.
 
-## Exercícios de casa 🏠
-5. Casa 05 
-6. Casa 06
-7. Casa 07
-8. Casa 08
+<details>
+  <summary>Dicas</summary>
+  <ul>
+    <li>Transformar a sintaxe de Javascript para JSX.</li>
+  </ul>  
+</details>
 
 Preencha a checklist para finalizar o exercício:
--   [ ] Executar `git clone https://github.com/cubos-academy/front-intro-react.git` no terminal para clonar o repositório, ou clonar de outra maneira
--   [ ] Entrar na pasta do projeto pelo terminal executando `cd front-intro-react` no terminal e executar `git checkout -b nome-da-branch` para criar uma branch nova ou criá-la de outra maneira
 
-###### tags: `front-end` `módulo 2` `React` `DOM`
+- [ ] Resolver o exercício
+- [ ] Adicionar as mudanças aos commits (`git add .` para adicionar todos os arquivos ou `git add nome_do_arquivo` para adicionar um arquivo específico)
+- [ ] Commitar a cada mudança significativa ou na finalização do exercício (`git commit -m "Mensagem do commit"`)
+- [ ] Pushar os commits na sua branch na origem (`git push origin nome-da-branch`)
+- [ ] Realizar o pull request
+
+###### tags: `front-end` `módulo 2` `exercício de classe` `statement` `expression`
+
