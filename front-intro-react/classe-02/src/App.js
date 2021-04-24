@@ -41,14 +41,17 @@ function App() {
 
   return (
     <div className="App">
-    {
-      for (const item of itens) {
-        <div className="card" key={item.id}>
-          <img src={item.image} alt={item.title} />
-          <h2>{item.title}</h2>
-        </div>
+    
+      {
+        itens.map((item) => {
+        
+          <div className="card" key={item.id}>
+            <img src={item.image} alt={item.title} />
+            <h2>{item.title}</h2>
+          </div>
+        
+        })
       }
-    }
     </div>
   );
 }
