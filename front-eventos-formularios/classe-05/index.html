@@ -51,13 +51,71 @@
     </body>
 
     <script>
-        function invalidarElemento(elemento, mensagem) {
-            elemento.setCustomValidity(mensagem);
+
+        const form = document.querySelector('form')
+        const nome = document.querySelector('#first-name')
+        const sobrenome = document.querySelector('#last-name')
+        const email = document.querySelector('#email')
+        const senha = document.querySelector('#password')
+        const botao = document.querySelector('button')
+        const valido = document.querySelectorAll('.validity-icon')
+
+        form.addEventListener('submit', tudoValido)
+        nome.addEventListener('input', validarNome)
+        sobrenome.addEventListener('input', validarSobrenome)
+        senha.addEventListener('input', validarSenha)
+        
+        let nomeOk = false
+        function validarNome(event) {
+
+            
+            const inicial = nome.value.charAt(0)
+            if (inicial === inicial.toLowerCase()) {
+                invalid(nome)
+                event.preventDefault()
+            }
+            nomeOk = true
+
+        }        
+        
+        let sobrenomeOk = false
+        function validarSobrenome(event) {
+
+            const inicial = nome.value.charAt(0)
+            if (inicial === inicial.toLowerCase()) {
+                invalid(sobrenome) 
+            } 
+            sobrenomeOk = true
+
         }
 
-        function validarElemento(elemento) {
-            elemento.setCustomValidity('');
+        let emailOk =false
+        function validarEmail() {
+
+            if() {
+
+            }
+            emailOk = true
         }
+
+        let senhaOk = false
+        function validarSenha(event) {
+
+            if(senha.value.lenght < 7 ) {
+
+            }
+            senhaOk = true
+        }
+
+        function tudoValido(event) {
+            
+            if(!nomeOk || !sobrenomeOk || !senhaOk || !emailOk ) {
+                preventDefault()
+            }
+            
+        }
+
+
     </script>
 
 </html>
