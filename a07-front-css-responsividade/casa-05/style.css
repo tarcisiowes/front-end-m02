@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    box-sizing: border-box;
+    display: grid;
+    gap: 2em;
+    grid-template-areas:
+    "topo topo" 
+    "a a" 
+    "c c" 
+    "e e" 
+    "footer footer";
+    justify-content: center;
+}
+
+.topo{
+    grid-area: topo;
+}
+.descricao1{
+    grid-area: cont1;
+
+}
+.img1{
+    grid-area: cont2;
+}
+
+.descricao2{
+    grid-area: cont22;
+
+}
+.img2{
+    grid-area: cont21;
+}
+.img3{
+    grid-area: cont21;
+}
+.cards{
+    grid-area: e;
+    display: grid;
+    gap: 2em;
+    grid-template-areas:
+    "card1 card2"
+    "card3 card4";
+    justify-content: center;
+}
+.conteudo1{
+    grid-area: a;
+    display: grid;
+    gap: 2em;
+    grid-template-areas:
+    "cont1 cont2";
+    justify-content: center;
+  
+}
+.conteudo2{
+    grid-area: c;
+    display: grid;
+    gap: 2em;
+    grid-template-areas:
+    "cont21 cont22";
+    justify-content: center;
+  
+}
+.conteudo1 .descricao1{
+    width: 445px;
+    height: 312px;
+
+}
+div.img1 img{
+    width: 540px;
+    height: 480px;
+
+}div.img2 img{
+    width: 255px;
+    height: 480px;
+}div.img3 img{
+    width: 445px;
+    height: 480px;
+}
+
+.conteudo2{
+   
+}
+.conteudo1 .descricao1{
+    width: 255px;
+    height: 265px;
+}
+.conteudo2 .descricao2{
+    width: 255px;
+    height: 265px;
+}
+
+.cards{
+    grid-area: e;
+}
+.card1,.card2,.card3,.card4{
+    width: 255px;
+    height: 323px;
+}
+
+footer{
+    grid-area: footer;
+}
