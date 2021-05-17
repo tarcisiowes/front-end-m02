@@ -1,0 +1,37 @@
+/* .filters {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.filter {
+    all: unset;
+    font-family: 'Open Sans';
+    flex-basis: 168px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: grid;
+    place-content: center;
+    padding: 5px;
+    background-color: rgba(225, 131, 200, 0.2);
+    opacity: 0.2;
+    border: 2px solid var(--branco);
+    color: var(--branco);
+    text-align: center;
+}
+
+/* muito foda isso aqui */
+/* .filter:not(.filter--active):hover{
+
+    opacity: 1;
+    border: 2px solid var(--rosa);
+    color: var(--rosa);
+    background: transparent;
+    
+}
+
+.filter.filter--active{
+    opacity: 1;
+    border: 2px solid var(--rosa);
+    color: var(--rosa);
+}  */

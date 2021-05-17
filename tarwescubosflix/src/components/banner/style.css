@@ -1,7 +1,7 @@
 
 .banner{
   position: relative;
-  width: 936px;
+  max-width: 936px;
   height: 119px;
   margin-bottom: 50px;
   margin-top: 40px;
@@ -66,4 +66,13 @@
   position: absolute;
   bottom: 8px;
   right: 75px;
+}
+.banner .lineBanner{
+
+  height: 46px;
+  width: 0px;
+  border: 1px solid #F294D898;
+  position: absolute;
+  bottom: 15px;
+  right: 30%;
 }

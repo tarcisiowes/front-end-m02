@@ -56,8 +56,8 @@ export default function Timer() {
             </svg>
           
             <div className="msgBanner">
-              <h1>APROVEITE AGORA</h1>
-              <p>
+                <h1>APROVEITE AGORA</h1>
+                <p>
                 <svg width="40" height="37" viewBox="0 0 40 37" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g filter="url(#filter0_d)">
             <circle cx="23.5" cy="20" r="16" fill="url(#paint0_linear)"/>
@@ -87,7 +87,9 @@ export default function Timer() {
                 CUPOM: htmlnaoelinguagem
                 </p>
 
-              <div className="contador">
+                <div className="lineBanner"></div>
+
+                <div className="contador">
                     <h2>FINALIZA EM:</h2>
                     
                 <p >

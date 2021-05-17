@@ -1,0 +1,67 @@
+
+.sacola{
+  
+  position: relative;
+  width: 312px;
+  height: 537px;
+  border: solid 2px peachpuff;
+  position: -webkit-sticky;
+  position: fixed;
+  left: 70%;
+  top: 148px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(15px);
+  text-align: center;
+  
+}
+.topoSacola{
+  display: flex;
+  width: 312px;
+  height: 72px;
+  background: linear-gradient(0deg, #A785ED, #A785ED), #C4C4C4;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+.topoSacola svg{
+  transform: translateY(12px);
+}
+
+.topoSacola p{
+  font-style: normal;
+  line-height: 150%;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--cinzaClaro);
+}
+.sacolaInput{
+  
+  width: 280px;
+  height: 40px;
+  border: 1px solid var(--branco);
+  background-color: var(--preto2);
+  transform: translateX(16px);
+
+}
+.sacola span{
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--cinzaClaro);
+  margin-right: 60%;
+}
+.sacolaInput
+input{
+  width: 255px;
+  height: 40px;
+  background-color: var(--preto2);
+  border: transparent;
+  font-size: 16px;
+  line-height: 150%;
+  color: #FDFDFD;
+
+}
+.sacolaInput svg{
+  margin-bottom: 10px;
+  
+}

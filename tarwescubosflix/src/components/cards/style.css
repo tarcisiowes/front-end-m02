@@ -1,22 +1,22 @@
 .filmes, .filmes2 {
-    display:grid;  
-    gap: 24px;
-    max-width: 955px;    
-    grid-template-columns: repeat(auto-fit,minmax(168px,1fr));
-    Height: 301px;
-    overflow: hidden;
-    position: relative;
+  display:grid;  
+  gap: 24px;
+  max-width: 937px;    
+  grid-template-columns: repeat(auto-fit,minmax(168px,1fr));
+  Height: 301px;
+  overflow: hidden;
+  position: relative;
 }
 .filmes2{
   overflow: visible;
 }
 
 .card {
-    Width: 168px;
-    Height: 301px;
-    display: flex;
-    flex-direction: column;
-    justify-content:flex-end;
+  Width: 168px;
+  Height: 301px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-end;
 
 }
 
@@ -32,15 +32,31 @@
 }
 
 .addCarrinho {
+
+  all: unset;
   width: 152px;
   height: 26px;
   background-color: var(--roxo);
   align-self: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4em 1em;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  color: var(--branco);
+  margin-bottom: 1em;
   
 }
 .card img{
- position: absolute;
- Width: 168px;
- Height: 301px;
- z-index: -1;
+  position: absolute;
+  Width: 168px;
+  Height: 301px;
+  z-index: -1;
+}
+.movieInfo {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
 }
