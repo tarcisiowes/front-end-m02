@@ -1,0 +1,46 @@
+.filmes, .filmes2 {
+    display:grid;  
+    gap: 24px;
+    max-width: 955px;    
+    grid-template-columns: repeat(auto-fit,minmax(168px,1fr));
+    Height: 301px;
+    overflow: hidden;
+    position: relative;
+}
+.filmes2{
+  overflow: visible;
+}
+
+.card {
+    Width: 168px;
+    Height: 301px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+
+}
+
+.fav{
+  position: absolute;
+  top: 15px;
+  
+ 
+}
+
+.fav, .addCarrinho{
+  cursor: pointer;
+}
+
+.addCarrinho {
+  width: 152px;
+  height: 26px;
+  background-color: var(--roxo);
+  align-self: center;
+  
+}
+.card img{
+ position: absolute;
+ Width: 168px;
+ Height: 301px;
+ z-index: -1;
+}
