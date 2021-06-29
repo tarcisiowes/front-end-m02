@@ -66,7 +66,38 @@
     const p = document.querySelector('p')
     const span = document.querySelector('span')
   
-  
+    input.addEventListener('blur', ({target: {valueAsNumber}}) => {  
+
+    const professorAtual = professores.find(professor => professor.id === valueAsNumber)      
+
+    if (!professorAtual){
+
+      limparInfo()
+
+      span.innerText = 'Nenhum professor encontrado!'
+
+      return span.style.display = 'block'
+    }
+
+    professorInfo(professorAtual)     
+    })
+
+    function professorInfo(professor) {
+
+      span.style.display = 'none'
+      
+      const {name, avatar, stack} = professor
+      h1.innerText = name
+      img.src = avatar
+      p.innerText = stack
+    }
+
+    function limparInfo() {
+
+      h1.innerText = ''
+      img.src = ''
+      p.innerText = ''
+    }
   
   </script>
 
