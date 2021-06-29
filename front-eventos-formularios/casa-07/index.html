@@ -34,7 +34,33 @@
     const segundo = document.querySelector('.segundo')
     const segundoDropDownTemperaturas = segundo.querySelector('.drpTemperaturas')
     const segundoInput = segundo.querySelector('input')
+
+    primeiroInput.addEventListener('input', ({target: {value}}) => {
+
+      if(verificaSeGrausSaoIguais()){
+
+        segundoInput.value = primeiroInput.valueAsNumber
+      
+        return
+      }
+
+    })
+
+    segundoInput.addEventListener('input', ({target: {value}}) => {
+
+      if(verificaSeGrausSaoIguais()){
+
+        primeiroInput.value = segundoInput.valueAsNumber
+
+        return        
+      }
+
+    })
     
+    function verificaSeGrausSaoIguais() {
+
+    }
+
   </script>
 
 </html>
