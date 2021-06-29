@@ -44,10 +44,13 @@
         return
       }
 
+      const grauAtual = primeiroDropDownTemperaturas.value
+      const novoGrau = segundoDropDownTemperaturas.value
+      const valorParaConverter = primeiroInput.valueAsNumber
     })
 
     segundoInput.addEventListener('input', ({target: {value}}) => {
-
+      
       if(verificaSeGrausSaoIguais()){
 
         primeiroInput.value = segundoInput.valueAsNumber
@@ -59,7 +62,39 @@
     
     function verificaSeGrausSaoIguais() {
 
+      const grauPrimeiroDrp = primeiroDropDownTemperaturas.value
+      const grauSegundoDrp = segundoDropDownTemperaturas.value
+
+      return grauPrimeiroDrp === grauSegundoDrp
     }
+
+    primeiroDropDownTemperaturas.addEventListener('change', ({target: {value}}) => {
+
+      if (verificaSeGrausSaoIguais()){
+
+        primeiroInput.value = segundoInput.valueAsNumber
+
+        return
+      }
+
+      const grauAtual = segundoDropDownTemperaturas.value
+      const novoGrau = value
+      const valorParaConverter = segundoInput.valueAsNumber
+    })
+
+    segundoDropDownTemperaturas.addEventListener('change', ({target: {value}}) => {
+      
+      if (verificaSeGrausSaoIguais()){
+
+        primeiroInput.value = segundoInput.valueAsNumber
+
+        return
+      }
+
+      const grauAtual = primeiroDropDownTemperaturas.value
+      const novoGrau = value
+      const valorParaConverter = primeiroInput.valueAsNumber
+    })
 
   </script>
 
