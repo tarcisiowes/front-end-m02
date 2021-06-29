@@ -52,69 +52,92 @@
 
     <script>
 
-        const form = document.querySelector('form')
         const nome = document.querySelector('#first-name')
         const sobrenome = document.querySelector('#last-name')
         const email = document.querySelector('#email')
         const senha = document.querySelector('#password')
-        const botao = document.querySelector('button')
-        const valido = document.querySelectorAll('.validity-icon')
+        const form = document.querySelector('form')
 
-        form.addEventListener('submit', tudoValido)
-        nome.addEventListener('input', validarNome)
-        sobrenome.addEventListener('input', validarSobrenome)
+        nome.addEventListener('input', verificaPrimeiraLetraMaiuscula)
+        sobrenome.addEventListener('input', verificaPrimeiraLetraMaiuscula)
         senha.addEventListener('input', validarSenha)
-        
-        let nomeOk = false
-        function validarNome(event) {
+        email.addEventListener('input', ({target}) => {
 
+            const {value, id} = target
+            const input = retornaInputPeloId(id);
+            value.includes('@') ? validarInput(input) : invalidarInput(input, 'E-mail inválido!')
+        })
+        form.addEventListener('submit', verificaInputs )
+
+        function verificaPrimeiraLetraMaiuscula(event) {
+
+            const {value, id} = event.target
             
-            const inicial = nome.value.charAt(0)
-            if (inicial === inicial.toLowerCase()) {
-                invalid(nome)
-                event.preventDefault()
+            if(!value){
+                
+                return
             }
-            nomeOk = true
 
-        }        
-        
-        let sobrenomeOk = false
-        function validarSobrenome(event) {
-
-            const inicial = nome.value.charAt(0)
-            if (inicial === inicial.toLowerCase()) {
-                invalid(sobrenome) 
-            } 
-            sobrenomeOk = true
-
+            const input = retornaInputPeloId(id)
+            value.trim()[0] === value.trim()[0].toUpperCase() ? validarInput(input) : invalidarInput(input, 'A primeira letra deve ser maiuscula!')
         }
 
-        let emailOk =false
-        function validarEmail() {
+        function validarSenha (event) {
 
-            if() {
-
-            }
-            emailOk = true
-        }
-
-        let senhaOk = false
-        function validarSenha(event) {
-
-            if(senha.value.lenght < 7 ) {
-
-            }
-            senhaOk = true
-        }
-
-        function tudoValido(event) {
+            let temNumero = false
+            let temLetra = false
+            const {value, id} = event.target
             
-            if(!nomeOk || !sobrenomeOk || !senhaOk || !emailOk ) {
-                preventDefault()
+            const input = retornaInputPeloId(id)
+
+            if(value.length < 8) {
+
+                return invalidarInput(input, 'A senha precisar ter mais de 8 caracters!')
+            }            
+
+            for (const caracters of value) {
+
+                if(!isNaN(caracters.trim())){
+
+                    temNumero = true
+                    continue
+                }
+                
+                if(caracters.toUpperCase() !== caracters.toLowerCase()){
+
+                    temLetra = true
+                }
             }
-            
+            temNumero && temLetra ? validarInput(input) : invalidarInput(input, 'A senha precisa ter pelo menos 1 letra e 1 número!')            
         }
 
+        function verificaInputs(event) { 
+
+            const inputs = [nome,sobrenome, senha]
+            for (const input of inputs) {
+
+                if (!input.value){
+
+                    invalidarInput(input, 'Esse campo é obrigatório!')
+                    return event.preventDefault()
+                }
+            }
+        }
+
+        function retornaInputPeloId(id) {
+
+            return document.querySelector(`#${id}`)
+        }
+
+        function invalidarInput(input, mensagem) {
+
+            input.setCustomValidity(mensagem)
+        }
+
+        function validarInput(input) {
+
+            input.setCustomValidity('')
+        }
 
     </script>
 
