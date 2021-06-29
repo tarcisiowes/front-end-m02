@@ -47,6 +47,8 @@
       const grauAtual = primeiroDropDownTemperaturas.value
       const novoGrau = segundoDropDownTemperaturas.value
       const valorParaConverter = primeiroInput.valueAsNumber
+
+      segundoInput.value = realizarConversao(grauAtual, novoGrau, valorParaConverter )
     })
 
     segundoInput.addEventListener('input', ({target: {value}}) => {
@@ -58,6 +60,7 @@
         return        
       }
 
+      primeiroInput.value = realizarConversao(segundoDropDownTemperaturas.value, primeiroDropDownTemperaturas.value, segundoInput.valueAsNumber )
     })
     
     function verificaSeGrausSaoIguais() {
@@ -80,6 +83,8 @@
       const grauAtual = segundoDropDownTemperaturas.value
       const novoGrau = value
       const valorParaConverter = segundoInput.valueAsNumber
+
+      primeiroInput.value = realizarConversao(grauAtual, novoGrau , valorParaConverter )
     })
 
     segundoDropDownTemperaturas.addEventListener('change', ({target: {value}}) => {
@@ -94,7 +99,62 @@
       const grauAtual = primeiroDropDownTemperaturas.value
       const novoGrau = value
       const valorParaConverter = primeiroInput.valueAsNumber
+      segundoInput.value = realizarConversao(grauAtual, novoGrau, valorParaConverter)
     })
+
+    function realizarConversao(grauAtual, novoGrau, valorParaConverter) {
+
+      switch (grauAtual) {
+        
+        case 'Celsius': 
+          return converterCelsiusPara(novoGrau, valorParaConverter)
+
+        case 'Fahrenheit':          
+          return converterFahrenheitPara(novoGrau, valorParaConverter)
+
+        case 'Kelvin':          
+          return converterKelvinPara(novoGrau, valorParaConverter)
+
+        default:
+          break
+      }
+    }
+
+    function converterCelsiusPara(novoGrau, valorParaConverter ) {
+
+      switch (novoGrau) {
+
+        case 'Fahrenheit':
+          return (valorParaConverter * 9/5) + 32
+
+        case 'Kelvin':
+          return valorParaConverter + 273.15
+      }
+    }
+
+    function converterFahrenheitPara(novoGrau, valorParaConverter) {
+      
+      switch (novoGrau) {
+
+        case 'Celsius':
+          return (valorParaConverter - 32) * 5/9
+
+        case 'Kelvin':
+          return (valorParaConverter - 32) * 5/9 + 273.15
+      }
+    }
+
+    function converterKelvinPara(novoGrau, valorParaConverter) {
+
+      switch (novoGrau) {
+
+        case 'Celsius':
+          return valorParaConverter - 273.15
+
+        case 'Fahrenheit':
+          return (valorParaConverter - 273.15) * 9/5 + 32
+      }
+    }
 
   </script>
 
